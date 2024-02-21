@@ -8,6 +8,9 @@ void suma();
 void resta();
 void mult();
 void div();
+void cambio_signo();
+void raiz_cuadrada();
+void potencia();
 
 void fin();
 
@@ -30,7 +33,10 @@ void menu(int * opc){
     printf("  2. Restar\n");
     printf("  3. Multiplicar\n");
     printf("  4. Dividir\n");
-    printf("  5. Salir del programa\n  ");
+    printf("  5. Cambiar signo\n");
+    printf("  6. Raiz cuadrada \n");
+    printf("  7. Potencia\n");
+    printf("  8. Salir del programa\n  ");
     scanf("%d", opc);    
 }
 
@@ -48,7 +54,16 @@ void opciones(int opc){
 	    case 4:
 	        div();
 	        break;
-	    case 5:
+            case 5:
+	    	cambio_signo();
+	    	break;
+	    case 6:
+	    	raiz_cuadrada();
+	    	break;
+	    case 7:
+	    	potencia();
+	    	break;
+	    case 8:
 	    	fin();
 	    	break;
 	    default:
@@ -97,6 +112,31 @@ void div(){
 	scanf("%d", &n2);
 	t = n1 / n2;
 	printf("\n El resultado es %d", t);
+}
+
+void cambio_signo(){
+	float num;
+	printf("\n Ingresa el número:");
+	scanf("%f", &num);
+	printf("\n El cambio de signo de %f es %f", num, -num);
+}
+
+void raiz_cuadrada(){
+	printf("\t RAIZ CUADRADA");
+	float num;
+	printf("\n Ingresa el número:");
+	scanf("%f", &num);
+	printf("\n El resultado es %f", sqrt(num));
+}
+
+void potencia(){
+	printf("\t POTENCIA");
+	int base, exponente;
+	printf("\n Ingresa la base:");
+	scanf("%d", &base);
+	printf("\n Ingresa el exponente:");
+	scanf("%d", &exponente);
+	printf("\n El resultado es %f", pow(base, exponente));
 }
 
 void fin(){
